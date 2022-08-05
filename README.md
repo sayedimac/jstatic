@@ -9,4 +9,4 @@ Deploy as a static web application, this will publish a static Blazor Web assemb
 [Create an Azure Static Web App] (https://docs.microsoft.com/en-us/azure/static-web-apps/get-started-portal?tabs=vanilla-javascript&pivots=github#create-a-static-web-app “Azure Static Web Apps with Blazor”)
 
 
-![Blazor](https://github.com/sayedimac/jstatic/edit/main/blazor)
+![Blazor](https://github.com/sayedimac/jstatic/edit/main/blazor.png)
