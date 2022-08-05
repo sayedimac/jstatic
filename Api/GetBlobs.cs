@@ -42,12 +42,12 @@ namespace myfunc
                 BlobObject blobObject = new BlobObject(blobItem.Name, Flurl.Url.Combine(
                         containerClient.Uri.AbsoluteUri,
                         blobItem.Name));
-                IDictionary<string, string> Metadata = new Dictionary<string, string>();
-                foreach (var item in blobItem.Metadata)
-                {
-                    Metadata.Add(item.Key, item.Value);
-                }
-                blobObject.blobCustomer = Metadata["Customer"];
+                //IDictionary<string, string> Metadata = new Dictionary<string, string>();
+                // foreach (var item in blobItem.Metadata)
+                // {
+                //     Metadata.Add(item.Key, item.Value);
+                // }
+                // blobObject.blobCustomer = Metadata["Customer"];
                 results.Add(blobObject);
             }
 
