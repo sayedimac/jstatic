@@ -57,29 +57,5 @@ namespace myfunc
             await containerClient.CreateIfNotExistsAsync();
             return containerClient;
         }
-
-        public static async Task ReadBlobMetadataAsync(BlobClient blob)
-        {
-            try
-            {
-                // Get the blob's properties and metadata.
-                BlobProperties properties = await blob.GetPropertiesAsync();
-
-                Console.WriteLine("Blob metadata:");
-
-                // Enumerate the blob's metadata.
-                foreach (var metadataItem in properties.Metadata)
-                {
-                    Console.WriteLine($"\tKey: {metadataItem.Key}");
-                    Console.WriteLine($"\tValue: {metadataItem.Value}");
-                }
-            }
-            catch (RequestFailedException e)
-            {
-                Console.WriteLine($"HTTP error code {e.Status}: {e.ErrorCode}");
-                Console.WriteLine(e.Message);
-                Console.ReadLine();
-            }
-        }
     }
 }
