@@ -12,7 +12,11 @@ using Azure.Storage.Blobs.Models;
 using System.Collections.Generic;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Configuration.AzureAppConfiguration;
+<<<<<<< HEAD
 using JStatic.Shared;
+=======
+using BlazorApp.Shared;
+>>>>>>> main
 
 namespace JStatic
 {
@@ -57,6 +61,9 @@ namespace JStatic
             return containerClient;
         }
     }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> main
 }
