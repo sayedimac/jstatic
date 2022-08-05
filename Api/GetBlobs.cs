@@ -12,8 +12,9 @@ using Azure.Storage.Blobs.Models;
 using System.Collections.Generic;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Configuration.AzureAppConfiguration;
+using JStatic.Shared;
 
-namespace myfunc
+namespace JStatic
 {
     public static class getBlobs
     {
@@ -57,19 +58,5 @@ namespace myfunc
         }
     }
 
-    public class BlobObject
-    {
-        public BlobObject(string name, string url)
-        {
-            blobName = name;
-            blobUrl = url;
-        }
-        public BlobObject()
-        {
 
-        }
-        public string blobName { get; set; }
-
-        public string blobUrl { get; set; }
-    }
 }
