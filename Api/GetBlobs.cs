@@ -56,20 +56,4 @@ namespace myfunc
             return containerClient;
         }
     }
-
-    public class BlobObject
-    {
-        public BlobObject(string name, string url)
-        {
-            blobName = name;
-            blobUrl = url;
-        }
-        public BlobObject()
-        {
-
-        }
-        public string blobName { get; set; }
-
-        public string blobUrl { get; set; }
-    }
 }
