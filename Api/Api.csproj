@@ -5,6 +5,7 @@
     <RootNamespace>JStatic.Api</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Azure.Data.Tables" Version="12.6.1" />
     <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="4.0.1" />
     <PackageReference Include="Azure.Storage.Blobs" Version="12.13.0" />
     <PackageReference Include="Flurl" Version="3.0.6" />

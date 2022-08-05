@@ -14,6 +14,12 @@ namespace JStatic.Shared
     }
     public class BlobObject
     {
+        public BlobObject(string name, string url, string customer)
+        {
+            blobName = name;
+            blobUrl = url;
+            blobCustomer = customer;
+        }
         public BlobObject(string name, string url)
         {
             blobName = name;
@@ -24,7 +30,7 @@ namespace JStatic.Shared
 
         }
         public string blobName { get; set; }
-
         public string blobUrl { get; set; }
+        public string blobCustomer { get; set; }
     }
 }

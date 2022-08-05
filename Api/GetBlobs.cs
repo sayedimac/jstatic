@@ -41,10 +41,14 @@ namespace myfunc
             {
                 BlobObject blobObject = new BlobObject(blobItem.Name, Flurl.Url.Combine(
                         containerClient.Uri.AbsoluteUri,
-                        blobItem.Name
-                    ));
+                        blobItem.Name));
+                foreach (var metadataItem in blobItem.Metadata)
+                {
+                    blobObject.blobCustomer = metadataItem.Value;
+                }
                 results.Add(blobObject);
             }
+
             return new OkObjectResult(results);
         }
 
