@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BlazorApp.Shared
+namespace JStatic.Shared
 {
     public class WeatherForecast
     {

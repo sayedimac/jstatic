@@ -12,7 +12,7 @@ using Azure.Storage.Blobs.Models;
 using System.Collections.Generic;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Configuration.AzureAppConfiguration;
-using BlazorApp.Shared;
+using JStatic.Shared;
 
 namespace myfunc
 {
