@@ -42,7 +42,6 @@ namespace myfunc
                 BlobObject blobObject = new BlobObject(blobItem.Name, Flurl.Url.Combine(
                         containerClient.Uri.AbsoluteUri,
                         blobItem.Name));
-                blobObject.blobCustomer = blobItem.Metadata["Customer"];
                 results.Add(blobObject);
             }
 
