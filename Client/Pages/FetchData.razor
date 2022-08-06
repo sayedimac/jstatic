@@ -1,6 +1,7 @@
 ﻿@page "/fetchdata"
 @using JStatic.Shared 
 @inject HttpClient Http
+@inject ILogger<Counter> logger
 
 <h1>Weather forecast</h1>
 
@@ -40,6 +41,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
+        logger.LogInformation("Called OnInitializedAsync");
         try
         {
             forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("/api/WeatherForecast") ?? new WeatherForecast[]{};
