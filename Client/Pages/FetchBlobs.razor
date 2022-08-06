@@ -1,5 +1,6 @@
 ﻿@page "/fetchblobs"
 @using JStatic.Shared
+@using Microsoft.AspNetCore.Components.Forms
 @inject HttpClient Http
 
 <h1>Weather forecast</h1>
@@ -32,11 +33,11 @@ else
             }
         </tbody>
     </table>
+    <InputFile OnChange="@LoadFiles" multiple />
 }
 
 @code {
     private BlobObject[] theBlobs = new BlobObject[] { };
-
     protected override async Task OnInitializedAsync()
     {
         try
@@ -47,5 +48,10 @@ else
         {
             Console.WriteLine(ex.ToString());
         }
+    }
+     private void LoadFiles(InputFileChangeEventArgs e)
+    {
+        await using FileStream fs = new(path, FileMode.Create);
+        await browserFile.OpenReadStream().CopyToAsync(fs);
     }
 }
