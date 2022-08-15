@@ -10,9 +10,8 @@ using Newtonsoft.Json;
 using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Models;
 using System.Collections.Generic;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Configuration.AzureAppConfiguration;
 using JStatic.Shared;
+using Azure;
 
 namespace myfunc
 {
@@ -42,6 +41,8 @@ namespace myfunc
                 BlobObject blobObject = new BlobObject(blobItem.Name, Flurl.Url.Combine(
                         containerClient.Uri.AbsoluteUri,
                         blobItem.Name));
+                blobObject.blobCustomer = blobItem.Metadata["customer"];
+
                 //IDictionary<string, string> Metadata = new Dictionary<string, string>();
                 // foreach (var item in blobItem.Metadata)
                 // {

@@ -49,9 +49,8 @@ else
             Console.WriteLine(ex.ToString());
         }
     }
-     private void LoadFiles(InputFileChangeEventArgs e)
+    private async Task LoadFiles()
     {
-        await using FileStream fs = new(path, FileMode.Create);
-        await browserFile.OpenReadStream().CopyToAsync(fs);
+        
     }
 }
