@@ -32,8 +32,7 @@ else
                 </tr>
             }
         </tbody>
-    </table>
-    <InputFile OnChange="@LoadFiles" multiple />
+        </table>
 }
 
 @code {
@@ -48,9 +47,5 @@ else
         {
             Console.WriteLine(ex.ToString());
         }
-    }
-    private async Task LoadFiles()
-    {
-        
     }
 }
