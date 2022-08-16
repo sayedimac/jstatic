@@ -11,9 +11,8 @@ using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Models;
 using System.Collections.Generic;
 using JStatic.Shared;
-using Azure;
 
-namespace myfunc
+namespace JStatic
 {
     public static class getBlobs
     {
@@ -41,14 +40,6 @@ namespace myfunc
                 BlobObject blobObject = new BlobObject(blobItem.Name, Flurl.Url.Combine(
                         containerClient.Uri.AbsoluteUri,
                         blobItem.Name));
-                blobObject.blobCustomer = blobItem.Metadata["customer"];
-
-                //IDictionary<string, string> Metadata = new Dictionary<string, string>();
-                // foreach (var item in blobItem.Metadata)
-                // {
-                //     Metadata.Add(item.Key, item.Value);
-                // }
-                // blobObject.blobCustomer = Metadata["Customer"];
                 results.Add(blobObject);
             }
 
