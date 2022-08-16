@@ -33,4 +33,25 @@ namespace JStatic.Shared
         public string blobUrl { get; set; }
         public string blobCustomer { get; set; }
     }
+    public class EventObject
+    {
+        public EventObject(string name, string url, string customer)
+        {
+            eventName = name;
+            eventUrl = url;
+            eventCustomer = customer;
+        }
+        public EventObject(string name, string url)
+        {
+            eventName = name;
+            eventUrl = url;
+        }
+        public EventObject()
+        {
+
+        }
+        public string eventName { get; set; }
+        public string eventUrl { get; set; }
+        public string eventCustomer { get; set; }
+    }
 }
