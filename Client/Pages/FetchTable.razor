@@ -14,22 +14,22 @@
 else
 {
     <p>
-    <select  @onchange="Navigate">
-      <option>Select a Partion Key</option>  
-      <option value="website1">Website1</option>
-      <option value="website2">Website2</option>
+    <select @bind="SelectedValue">
+        <option>Select a Partion Key</option>
+        <option value="website1">Website1</option>
+        <option value="website2">Website2</option>
     </select>
-    </p>
+</p>
     <table class="table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Quantity</th>
-                <th>Is Sale</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in theItems)
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Is Sale</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in theItems)
             {
                 <tr>
                     <td>@item.Name</td>
@@ -44,18 +44,12 @@ else
 @code {
     public string SelectedValue = "";
     private Product[] theItems = new Product[] { };
-    private void Navigate(ChangeEventArgs e)
-    {
-        if (e.Value is not null)
-        {
-            SelectedValue = (string)e.Value;
-        }
-    }
+
     protected override async Task OnInitializedAsync()
     {
         try
         {
-            theItems = await Http.GetFromJsonAsync<Product[]>("/api/querytabledata?partkey=" + SelectedValue ) ?? new Product[] { };
+            theItems = await Http.GetFromJsonAsync<Product[]>("/api/querytabledata?partkey=" + SelectedValue) ?? new Product[] { };
         }
         catch (Exception ex)
         {
