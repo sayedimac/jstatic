@@ -1,17 +1,24 @@
 ﻿@page "/fetchtable"
 @using JStatic.Shared
+@using Microsoft.AspNetCore.WebUtilities
 @inject HttpClient Http
+@inject NavigationManager NavManager
 
 <h1>Retrieve Storage Table rows</h1>
 
 <p>This component demonstrates fetching rows from a storage account Table</p>
-
 @if (theItems == null)
 {
     <p><em>Loading...</em></p>
 }
 else
 {
+    <p>
+    <select name="partkey" id="partkey"  @onchange="Navigate">
+      <option value="website1">Website1</option>
+      <option value="website2">Website2</option>
+    </select>
+    </p>
     <table class="table">
         <thead>
             <tr>
@@ -35,6 +42,16 @@ else
 
 @code {
     private Product[] theItems = new Product[] { };
+    public string SelectedValue = "";   
+    private void Navigate(ChangeEventArgs selectEvent)
+    {
+        SelectedValue = selectEvent.Value.ToString();
+        var queryParams = new Dictionary<string, string>
+        {
+            ["partkey"] = SelectedValue
+        };
+        NavManager.NavigateTo(QueryHelpers.AddQueryString("query-string-display", queryParams));
+    }
     protected override async Task OnInitializedAsync()
     {
         try
