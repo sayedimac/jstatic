@@ -50,13 +50,13 @@ else
         {
             ["partkey"] = SelectedValue
         };
-        NavManager.NavigateTo(QueryHelpers.AddQueryString("query-string-display", queryParams));
+        NavManager.NavigateTo(QueryHelpers.AddQueryString("FetchTable", queryParams));
     }
     protected override async Task OnInitializedAsync()
     {
         try
         {
-            theItems = await Http.GetFromJsonAsync<Product[]>("/api/querytabledata?partkey=website2") ?? new Product[] { };
+            theItems = await Http.GetFromJsonAsync<Product[]>("/api/querytabledata?partkey=" + SelectedValue ) ?? new Product[] { };
         }
         catch (Exception ex)
         {
