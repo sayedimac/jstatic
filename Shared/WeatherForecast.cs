@@ -45,5 +45,4 @@ namespace JStatic.Shared
         public ETag ETag { get; set; } = default!;
         public DateTimeOffset? Timestamp { get; set; } = default!;
     }
-
 }

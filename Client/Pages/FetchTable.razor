@@ -1,6 +1,6 @@
 ﻿@page "/fetchtable"
 @using JStatic.Shared
-@using Microsoft.AspNetCore.WebUtilities
+@* @using Microsoft.AspNetCore.WebUtilities *@
 @inject HttpClient Http
 
 
@@ -46,6 +46,7 @@ else
 @code {
     public string SelectedValue = "website1";
     private Product[] theItems = new Product[] { };
+
     void OnSelect(ChangeEventArgs e)
     {
         SelectedValue = e.Value.ToString();
