@@ -14,8 +14,7 @@
 else
 {
     <p>
-    <select @bind="SelectedValue">
-        <option>Select a Partion Key</option>
+    <select @bind="@SelectedValue">
         <option value="website1">Website1</option>
         <option value="website2">Website2</option>
     </select>
@@ -27,6 +26,7 @@ else
             <th>Quantity</th>
             <th>Is Sale</th>
         </tr>
+        <tr><th colspan="3">Selected partition is: @SelectedValue</th>></tr>
     </thead>
     <tbody>
         @foreach (var item in theItems)
