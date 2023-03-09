@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Azure.Data.Tables;
 using System.Text.Json;
+using JStatic.Shared;
 
 namespace JStatic
 {
