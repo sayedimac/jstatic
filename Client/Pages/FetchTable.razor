@@ -2,7 +2,7 @@
 @using JStatic.Shared
 @using Microsoft.AspNetCore.WebUtilities
 @inject HttpClient Http
-@inject NavigationManager NavManager
+
 
 <h1>Retrieve Storage Table rows</h1>
 
@@ -14,7 +14,7 @@
 else
 {
     <p>
-    <select name="partkey" id="partkey"  @onchange="Navigate">
+    <select  @onchange="Navigate">
       <option>Select a Partion Key</option>  
       <option value="website1">Website1</option>
       <option value="website2">Website2</option>
@@ -42,26 +42,19 @@ else
 }
 
 @code {
+    public string SelectedValue = "";
     private Product[] theItems = new Product[] { };
-    public string SelectedValue = "";   
-    var queryStrings = QueryHelpers.ParseQuery(uri.Query);
-    private void Navigate(ChangeEventArgs selectEvent)
+    private void Navigate(ChangeEventArgs e)
     {
-        SelectedValue = selectEvent.Value.ToString();
-        var queryParams = new Dictionary<string, string>
+        if (e.Value is not null)
         {
-            ["partkey"] = SelectedValue
-        };
-        NavManager.NavigateTo(QueryHelpers.AddQueryString("FetchTable", queryParams));
+            SelectedValue = (string)e.Value;
+        }
     }
     protected override async Task OnInitializedAsync()
     {
         try
         {
-        if(queryStrings.TryGetValue("partkey", out var _partkey))
-        {
-            SelectedValue = _partkey;
-        }
             theItems = await Http.GetFromJsonAsync<Product[]>("/api/querytabledata?partkey=" + SelectedValue ) ?? new Product[] { };
         }
         catch (Exception ex)
