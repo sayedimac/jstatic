@@ -1,4 +1,5 @@
 ﻿using System;
+using Azure;
 
 namespace JStatic.Shared
 {
@@ -33,25 +34,15 @@ namespace JStatic.Shared
         public string blobUrl { get; set; }
         public string blobCustomer { get; set; }
     }
-    public class EventObject
+    public record Product : ITableEntity
     {
-        public EventObject(string name, string url, string customer)
-        {
-            eventName = name;
-            eventUrl = url;
-            eventCustomer = customer;
-        }
-        public EventObject(string name, string url)
-        {
-            eventName = name;
-            eventUrl = url;
-        }
-        public EventObject()
-        {
-
-        }
-        public string eventName { get; set; }
-        public string eventUrl { get; set; }
-        public string eventCustomer { get; set; }
+        public string RowKey { get; set; } = default!;
+        public string PartitionKey { get; set; } = default!;
+        public string Name { get; init; } = default!;
+        public int Quantity { get; init; }
+        public bool Sale { get; init; }
+        public ETag ETag { get; set; } = default!;
+        public DateTimeOffset? Timestamp { get; set; } = default!;
     }
+
 }

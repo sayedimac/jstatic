@@ -4,5 +4,10 @@
     <TargetFramework>net6.0</TargetFramework>
     <RootNamespace>JStatic.Shared</RootNamespace>
   </PropertyGroup>
-
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="4.0.1" />
+    <PackageReference Include="Flurl" Version="3.0.6" />
+    <PackageReference Include="Azure.Data.Tables" Version="12.8.0" />
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.15.0" />
+  </ItemGroup>
 </Project>
