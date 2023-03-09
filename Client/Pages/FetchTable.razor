@@ -26,7 +26,7 @@ else
             <th>Quantity</th>
             <th>Is Sale</th>
         </tr>
-        <tr><th colspan="3">Selected partition is: @SelectedValue</th>></tr>
+        <tr><th colspan="3">Selected partition is: @SelectedValue</th></tr>
     </thead>
     <tbody>
         @foreach (var item in theItems)
@@ -42,7 +42,7 @@ else
 }
 
 @code {
-    public string SelectedValue;
+    public string SelectedValue = "website1";
     private Product[] theItems = new Product[] { };
 
     protected override async Task OnInitializedAsync()
