@@ -58,9 +58,9 @@ else
     {
         try
         {
-        if(queryStrings.TryGetValue("partkey", out var partkey))
+        if(queryStrings.TryGetValue("partkey", out var _partkey))
         {
-            SelectedValue = partkey;
+            SelectedValue = _partkey;
         }
             theItems = await Http.GetFromJsonAsync<Product[]>("/api/querytabledata?partkey=" + SelectedValue ) ?? new Product[] { };
         }
