@@ -3,8 +3,11 @@
 @inject ILogger<Form> Logger
 
 <EditForm Model="@exampleModel" OnSubmit="@HandleSubmit">
-    <InputText id="name" @bind-Value="exampleModel.Name" />
-
+    Name:
+    <InputText id="name" @bind-Value="exampleModel.Name" /><br />
+    Qty:
+    <InputText id="qty" @bind-Value="exampleModel.Qty" /><br />
+    <p role="status">Name: @exampleModel.Name @exampleModel.Qty </p>
     <button type="submit">Submit</button>
 </EditForm>
 
