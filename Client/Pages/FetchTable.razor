@@ -15,8 +15,7 @@ else
 {
     <p>
     <select @onchange="@OnSelect">
-        <option value="website1">Website1</option>
-        <option value="website2">Website2</option>
+        <option value="website1">order1</option>
     </select>
 </p>
     <table class="table">
@@ -44,7 +43,7 @@ else
 }
 
 @code {
-    public string SelectedValue = "website1";
+    public string SelectedValue = "order1";
     private Product[] theItems = new Product[] { };
 
     void OnSelect(ChangeEventArgs e)
