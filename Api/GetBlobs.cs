@@ -50,7 +50,7 @@ namespace JStatic
         {
             string connstring = Environment.GetEnvironmentVariable("connstring");
             BlobServiceClient serviceClient = new BlobServiceClient(connstring);
-            BlobContainerClient containerClient = serviceClient.GetBlobContainerClient("images");
+            BlobContainerClient containerClient = serviceClient.GetBlobContainerClient("website");
             await containerClient.CreateIfNotExistsAsync();
             return containerClient;
         }
