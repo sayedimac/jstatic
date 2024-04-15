@@ -1,4 +1,5 @@
-name: Push to static web app in Azure
+name: push-to-azure-static-webapps
+run-name: ${{ github.actor }} is learning GitHub Actions
 
 on:
   workflow_dispatch:
