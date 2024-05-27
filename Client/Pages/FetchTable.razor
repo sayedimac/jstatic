@@ -14,10 +14,8 @@
 else
 {
     <p>
-    <select @onchange="@OnSelect">
-        <option value="order1">order1</option>
-    </select>
-</p>
+    <iput type="text" @bind="SelectedValue" @onchange="@OnSelect" />
+    </p>
     <table class="table">
     <thead>
         <tr>
@@ -43,7 +41,7 @@ else
 }
 
 @code {
-    public string SelectedValue = "order1";
+    private string? SelectedValue;
     private Product[] theItems = new Product[] { };
 
     void OnSelect(ChangeEventArgs e)
