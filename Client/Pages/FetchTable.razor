@@ -14,8 +14,15 @@
 else
 {
     <p>
+<<<<<<< HEAD
     <input type="text" @bind="SelectedValue" @onchange="@OnSelect" />
     </p>
+=======
+    <select @onchange="@OnSelect">
+        <option value="order1">order1</option>
+    </select>
+</p>
+>>>>>>> parent of 3f7f647 (Update FetchTable.razor)
     <table class="table">
     <thead>
         <tr>
@@ -41,7 +48,7 @@ else
 }
 
 @code {
-    private string? SelectedValue;
+    public string SelectedValue = "order1";
     private Product[] theItems = new Product[] { };
 
     void OnSelect(ChangeEventArgs e)
